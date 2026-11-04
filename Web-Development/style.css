@@ -1,0 +1,521 @@
+
+/* ========================================
+   HANI NASROLLAHI — ARTIST PORTFOLIO
+   
+======================================== */
+
+/* 1. Color variables */
+
+:root {
+    --cream: #f5efe5;
+    --cream-light: #fbf8f2;
+    --brown: #382b24;
+    --brown-soft: #746257;
+    --terracotta: #a7654b;
+    --border: #ded1c1;
+    --white: #fffdf9;
+}
+
+/* 2. General page styles */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--cream);
+    color: var(--brown);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* 3. Header */
+
+header {
+    padding: 25px 7% 35px;
+    text-align: center;
+    background-color: var(--cream);
+    border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(34px, 5vw, 58px);
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+header h1::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 1px;
+    margin: 22px auto 0;
+    background-color: var(--terracotta);
+}
+
+/* 4. Navigation */
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin-bottom: 45px;
+}
+
+nav a {
+    color: var(--brown-soft);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+}
+
+nav a:hover {
+    color: var(--terracotta);
+}
+
+nav a:focus-visible {
+    outline: 2px solid var(--terracotta);
+    outline-offset: 4px;
+}
+
+/* 5. Main content */
+
+main {
+    width: min(calc(100% - 40px), 1100px);
+    margin: 0 auto;
+    padding: 50px 0 80px;
+}
+
+main > h2 {
+    margin: 0 0 12px;
+    text-align: center;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: normal;
+    font-style: italic;
+}
+
+main > p {
+    max-width: 620px;
+    margin: 0 auto 45px;
+    text-align: center;
+    color: var(--brown-soft);
+    font-size: 17px;
+}
+
+/* 6. Home page artwork carousel */
+
+.carousel {
+    max-width: 850px;
+    margin: 65px auto 85px;
+    text-align: center;
+}
+
+.carousel > h3 {
+    margin: 0 0 35px;
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+}
+
+.carousel-slide {
+    flex: 1;
+    min-width: 0;
+    padding: 18px;
+    background-color: var(--cream-light);
+    border: 1px solid var(--border);
+}
+
+.carousel-slide img {
+    display: block;
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.carousel-slide h4 {
+    max-width: 600px;
+    margin: 22px auto 5px;
+    color: var(--brown);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(17px, 2vw, 21px);
+    font-weight: normal;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Carousel buttons */
+
+.carousel-button {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--brown);
+    font-size: 20px;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.carousel-button:hover {
+    background-color: var(--terracotta);
+    border-color: var(--terracotta);
+    color: var(--white);
+}
+
+.carousel-button:focus-visible {
+    outline: 2px solid var(--terracotta);
+    outline-offset: 4px;
+}
+
+/* Carousel photo counter */
+
+#photoCounter {
+    margin: 22px 0 0;
+    color: var(--brown-soft);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+/* 7. Home page interests */
+
+main > h3:not(.carousel h3) {
+    margin-top: 55px;
+    font-size: 27px;
+    font-weight: normal;
+}
+
+main ul {
+    padding-left: 25px;
+    color: var(--brown-soft);
+}
+
+main li {
+    padding: 3px 0;
+}
+
+/* 8. Home page button */
+
+button#helloButton {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: 1px solid var(--terracotta);
+    background-color: var(--terracotta);
+    color: var(--white);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+button#helloButton:hover {
+    background-color: var(--brown);
+    border-color: var(--brown);
+}
+
+/* ========================================
+   9. ABOUT ME PAGE
+======================================== */
+
+.about-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: start;
+    gap: 42px;
+    margin: 0 auto 55px;
+}
+
+/* Biography heading */
+
+.biography h2 {
+    margin: 0 0 20px;
+    color: var(--brown);
+    text-align: left;
+    font-size: clamp(27px, 3vw, 34px);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Biography paragraphs */
+
+.biography p {
+    margin: 0 0 18px;
+    color: var(--brown-soft);
+    text-align: left;
+}
+
+/* Medium-sized portrait frame */
+
+.about-image {
+    width: 100%;
+    max-width: 280px;
+    margin: 8px auto 0;
+    padding: 10px;
+    background-color: var(--cream-light);
+    border: 1px solid var(--border);
+}
+
+/* Portrait image */
+
+.about-image img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Artist statement */
+
+.statement {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 28px 32px;
+    background-color: var(--cream-light);
+    border: 1px solid var(--border);
+}
+
+.statement h3 {
+    margin: 0 0 14px;
+    color: var(--brown);
+    font-size: 27px;
+    font-weight: normal;
+}
+
+.statement ol {
+    margin-bottom: 0;
+    padding-left: 24px;
+    color: var(--brown-soft);
+}
+
+.statement li {
+    padding: 4px 0 8px;
+}
+
+/* ========================================
+   10. PROJECTS PAGE
+======================================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    padding: 20px;
+    background-color: var(--cream-light);
+    border: 1px solid var(--border);
+}
+
+.project-card img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+}
+
+.project-card h3 {
+    color: var(--brown);
+    font-size: 23px;
+    font-weight: normal;
+}
+
+.project-card p {
+    color: var(--brown-soft);
+}
+
+.project-card a {
+    color: var(--terracotta);
+    text-decoration: none;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   11. Footer — shared by all pages
+======================================== */
+
+footer {
+    padding: 25px 20px;
+    border-top: 1px solid var(--border);
+    background-color: var(--cream-light);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: var(--brown-soft);
+    font-size: 14px;
+}
+
+/* ========================================
+   12. Responsive design
+======================================== */
+
+@media (max-width: 700px) {
+
+    /* Header and navigation */
+
+    header {
+        padding: 22px 20px 30px;
+    }
+
+    nav {
+        gap: 20px;
+        margin-bottom: 35px;
+    }
+
+    nav a {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    /* Main content */
+
+    main {
+        width: calc(100% - 28px);
+        padding-top: 35px;
+    }
+
+    /* About Me */
+
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .about-image {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    .about-image img {
+        height: 280px;
+    }
+
+    .statement {
+        padding: 22px 18px;
+    }
+
+    /* Home page carousel */
+
+    .carousel {
+        margin: 45px auto 60px;
+    }
+
+    .carousel > h3 {
+        margin-bottom: 22px;
+        font-size: 25px;
+    }
+
+    .carousel-container {
+        gap: 7px;
+    }
+
+    .carousel-slide {
+        padding: 8px;
+    }
+
+    .carousel-slide img {
+        height: 330px;
+    }
+
+    .carousel-slide h4 {
+        margin-top: 15px;
+        font-size: 16px;
+    }
+
+    .carousel-button {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+
+    /* Projects */
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card img {
+        height: 240px;
+    }
+}
+.contact-section {
+    margin-top: 60px;
+    padding: 40px;
+    background-color: var(--cream-light);
+    border: 1px solid var(--border);
+}
+
+.contact-section h2 {
+    margin-top: 0;
+    color: var(--brown);
+}
+
+.contact-details a {
+    color: var(--terracotta);
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.instagram-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.instagram-contact img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 24px;
+    }
+
+    .instagram-contact {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
